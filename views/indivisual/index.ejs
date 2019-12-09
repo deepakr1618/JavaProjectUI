@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doctor Details</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: rgb(255, 255, 255);
+            width: 100vw;
+            min-height: 100vh;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .cont {
+            width: 80%;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        .doc_cont {
+            width: 90%;
+            background: rgb(209, 209, 209);
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .each_doc {
+            padding: 20px;
+            background: white;
+            margin: 20px 20px;
+            box-shadow: 7px 9px 9px 0px #00000003;
+        }
+
+        .each_doc * {
+            margin: 5px;
+        }
+
+        .nm {
+            padding: 3px 10px;
+            border-radius: 99px;
+            background: rgb(200, 200, 200);
+            color: rgb(47, 47, 47);
+        }
+
+        .btn {
+            background: rgb(255, 77, 77);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            border-style: none;
+            border-radius: 5px;
+            padding: 10px 45px;
+            cursor:pointer;
+        }
+        .buttons{
+          display:flex;
+          flex-direction:rows;
+        }
+        .upd{
+          background:rgb(100, 185, 255);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="cont">
+        <h2>Doctor Details : </h2>
+        <div class="doc_cont">
+            <% for(var i=0; i < data.length; i++) { %>
+            <div class="each_doc">
+                <p><b>Name : </b> <span class="nm"><%= data[i].name %></span></p>
+                <p><b>Speciality : </b><%= data[i].special %></p>
+                <p><b>Room : </b> <%= data[i].room %></p>
+                <p><b>Degree : </b> <%= data[i].degree %></p>
+                <p><b>Salary : </b> <%= data[i].salary %></p>
+                <div class = "buttons">
+                <form action="/delete" method="POST">
+                    <input type="hidden" value="<%= data[i].id %>" name="id">
+                    <input class="btn del" type="submit" value="Delete">
+                </form>
+                <form action="/update" method="POST">
+                    <input type="hidden" value="<%= data[i].id %>" name="id">
+                    <input class="btn upd" type="submit" value="Update">
+                </form>
+                </div>
+            </div>
+
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Insert</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: rgb(255, 100, 100);
+            width: 100vw;
+            min-height: 100vh;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: 350px;
+            border-radius: 7px;
+            padding: 20px 20px;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background: rgb(255, 255, 255);
+        }
+
+        .inp {
+            font-size: 15px;
+            padding: 10px 5px;
+            margin: 10px;
+            font-family: 'Poppins', sans-serif;
+            border-style: none;
+            border-radius: 7px;
+            background: rgb(235, 235, 235);
+        }
+
+        .sub {
+            background: rgb(255, 100, 100);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/insert" method="POST">
+        <h2>Insert</h2>
+        <input type="text" name="name" placeholder="Doctor Name" class="inp">
+        <input type="text" name="special" placeholder="Doctor Speciality" class="inp">
+        <input type="text" name="degree" placeholder="Doctor Degree" class="inp">
+        <input type="number" name="salary" placeholder="Doctor Salary" class="inp">
+        <input type="number" name="room" placeholder="Doctor Room No" class="inp">
+        <input type="submit" value="Submit" class="inp sub">
+    </form>
+</body>
+
+</html>
